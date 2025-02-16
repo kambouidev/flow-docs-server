@@ -55,6 +55,7 @@ func notifications(w http.ResponseWriter, r *http.Request) {
 	defer c.Close()
 
 	for {
+		time.Sleep(time.Duration(20 + rand.Intn(20)) * time.Second)
 		msg := &message{
 			Timestamp:     time.Now(),
 			UserID:        gofakeit.UUID(),
@@ -69,7 +70,6 @@ func notifications(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 
-		time.Sleep(time.Duration(rand.Intn(5)) * time.Second)
 	}
 }
 
