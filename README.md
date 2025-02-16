@@ -1,4 +1,3 @@
-
 This is a simple server that exposes the following endpoints:
 
 ## Real-time notifications
@@ -102,10 +101,12 @@ To run the server, you need Golang runtime installed in your workspace. Then run
 
     go run server.go
 
-By default, the server listen to `localhost:8080`, if needed change the listening address using `-addr` flag, for example:
+By default, the server listen to `localhost:8080`. If needed, change the listening address using `-addr` flag.
 
-    go run server.go -addr localhost:9090 
+For example, to listen on all network interfaces on port 9090:
+
+    go run server.go -addr :9090
 
 # Security
 
-This simple server is not intended for production usage. The code has some security issues left intentionally for the challenge.  
+This simple server is not intended for production usage. The code has some security issues left intentionally for the challenge.
